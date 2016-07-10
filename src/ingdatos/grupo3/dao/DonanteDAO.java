@@ -14,16 +14,15 @@ import javax.sql.DataSource;
 
 import ingdatos.grupo3.beans.Donante;
 import oracle.jdbc.internal.OracleTypes;
-import pe.banco.dao.DonanteDAO;
 
-public class DonanteDAOImpl implements DonanteDAO {
+public class DonanteDAO {
 	String message;
 	
 	public String getMessage() {
 		return message;
 	}
 
-	@Override
+	
 	public String ingresarDonante(Donante donante) {
 		Context initContext;
 		Connection conn=null;
@@ -72,7 +71,7 @@ public class DonanteDAOImpl implements DonanteDAO {
 		return message;
 	}
 
-	@Override
+
 	public String modificarDonante(Donante donante) {
 		Context initContext;
 		Connection conn=null;
@@ -121,7 +120,7 @@ public class DonanteDAOImpl implements DonanteDAO {
 		return message;
 	}
 
-	@Override
+	
 	public String eliminarDonante(Donante donante) {
 		Context initContext;
 		Connection conn=null;
@@ -156,7 +155,7 @@ public class DonanteDAOImpl implements DonanteDAO {
 		return message;
 	}
 
-	@Override
+	
 	public List<Donante> listarDonantes(){
 		Context initContext;
 		Connection conn=null;
@@ -216,7 +215,7 @@ public class DonanteDAOImpl implements DonanteDAO {
 		return listDonantes;
 	}
 
-	@Override
+	
 	public Donante getDonante(String dnidon) {
 		Context initContext;
 		Connection conn=null;

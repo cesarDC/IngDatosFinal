@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import ingdatos.grupo3.beans.CentroSalud;
 import ingdatos.grupo3.beans.Usuario;
-import ingdatos.grupo3.dao.LoginDAOImpl;
+import ingdatos.grupo3.dao.LoginDAO;
 import pe.banco.dao.LoginDAO;
 
 /**
@@ -65,7 +65,7 @@ public class SesionServlet extends HttpServlet {
 					result = "Password Incorrecto";
 				}
 				if (result == null) {
-					LoginDAO daoLogin = new LoginDAOImpl();
+					LoginDAO daoLogin = new LoginDAO();
 					// user = daoLogin.autenticarUsuario(user);
 					CentroSalud cs = new CentroSalud();
 					cs.setNombreC("holi");

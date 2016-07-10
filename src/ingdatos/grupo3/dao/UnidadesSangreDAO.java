@@ -10,11 +10,9 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import ingdatos.grupo3.beans.BolsaSangre;
-import pe.banco.dao.UnidadesSangreDAO;
 
-public class UnidadesSangreDAOImpl implements UnidadesSangreDAO {
+public class UnidadesSangreDAO  {
 
-	@Override
 	public String ingresarUnidadSangre() {
 		Context initContext;
 		Connection conn=null;
@@ -31,7 +29,6 @@ public class UnidadesSangreDAOImpl implements UnidadesSangreDAO {
 		return null;
 	}
 
-	@Override
 	public String modificarUnidadSangre() {
 		Context initContext;
 		Connection conn=null;
@@ -48,7 +45,6 @@ public class UnidadesSangreDAOImpl implements UnidadesSangreDAO {
 		return null;
 	}
 
-	@Override
 	public UnidadesSangreDAO getUnidadSangre(Integer idUnidad) {
 		Context initContext;
 		Connection conn=null;
@@ -65,7 +61,6 @@ public class UnidadesSangreDAOImpl implements UnidadesSangreDAO {
 		return null;
 	}
 
-	@Override
 	public List<BolsaSangre> listarUnidades(Integer idCentro, String tipo) {
 		Context initContext;
 		Connection conn=null;

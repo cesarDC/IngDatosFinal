@@ -11,14 +11,12 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import ingdatos.grupo3.beans.CentroHospitalario;
-import ingdatos.grupo3.beans.Usuario;
 import oracle.jdbc.internal.OracleTypes;
-import pe.banco.dao.LoginDAO;
 
-public class LoginDAOImpl implements LoginDAO {
+public class LoginDAO{
 	String message=null;
 
-	@Override
+	
 	public Usuario autenticarUsuario(Usuario user) {
 		Context initContext;
 		Connection conn=null;

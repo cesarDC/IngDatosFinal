@@ -12,16 +12,15 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-import ingdatos.grupo3.beans.Encuesta;
-import pe.banco.dao.EncuestaDAO;
 
-public class EncuestaDAOImpl implements EncuestaDAO{
+public class EncuestaDAO{
 	private String message=null;
 
 	public String getMessage() {
 		return message;
 	}
-	@Override
+	
+	
 	public String ingresarEncuesta(Encuesta encuesta) {
 		Context initContext;
 		Connection conn = null;

@@ -13,9 +13,8 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import ingdatos.grupo3.beans.Local;
-import pe.banco.dao.AnalisisDAO;
 
-public class AnalisisDAOImpl implements AnalisisDAO{
+public class AnalisisDAO{
 	private String message=null;
 	
 	
@@ -23,7 +22,7 @@ public class AnalisisDAOImpl implements AnalisisDAO{
 		return message;
 	}
 
-	@Override
+	
 	public String ingresarAnalisis(Local analisis) {
 		Context initContext;
 		Connection conn = null;

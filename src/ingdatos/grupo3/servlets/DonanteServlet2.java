@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ingdatos.grupo3.beans.Donante;
-import ingdatos.grupo3.dao.DonanteDAOImpl;
+import ingdatos.grupo3.dao.DonanteDAO;
 
 /**
  * Servlet implementation class DonanteServlet2
@@ -32,7 +32,7 @@ public class DonanteServlet2 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String dniDon=request.getParameter("dnidon");
-		DonanteDAOImpl donanteDAOImpl=new DonanteDAOImpl();
+		DonanteDAO donanteDAOImpl=new DonanteDAO();
 		donanteDAOImpl.eliminarDonante(dniDon);
 		String msg=donanteDAOImpl.getMessage();
 		RequestDispatcher rd=request.getRequestDispatcher("confirmar.jsp");
@@ -44,7 +44,7 @@ public class DonanteServlet2 extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		DonanteDAOImpl donanteDAOImpl=new DonanteDAOImpl();
+		DonanteDAO donanteDAOImpl=new DonanteDAO();
 		String nombre=request.getParameter("nombre");
 		String apellidop=request.getParameter("apellidop");
 		String apellidom=request.getParameter("apellidom");

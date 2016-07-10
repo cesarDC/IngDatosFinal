@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ingdatos.grupo3.beans.Donante;
-import ingdatos.grupo3.dao.DonanteDAOImpl;
+import ingdatos.grupo3.dao.DonanteDAO;
 
 /**
  * Servlet implementation class ListaDonantesServlet
@@ -32,7 +32,7 @@ public class ListaDonantesServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		DonanteDAOImpl donanteDAOImpl=new DonanteDAOImpl();
+		DonanteDAO donanteDAOImpl=new DonanteDAO();
 		List<Donante> lista=donanteDAOImpl.listarDonantes();
 		String msg=donanteDAOImpl.getMessage();
 		RequestDispatcher rd;
