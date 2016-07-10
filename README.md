@@ -1,2 +1,6 @@
-# IngDatosGrupo4Cliente
-Ingeniería de Datos - Grupo 4 Cliente
+﻿# IngDatosFinal
+Integrantes:
+-Cesar del Castillo
+-Rossy Espinoza
+-Mitchelli Trigueros
+-Carlos Ugaz
