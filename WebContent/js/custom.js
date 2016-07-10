@@ -2,9 +2,9 @@
  * 
  */
 $(document).ready(function() {
-	$('#gestionAcademica').off('click').on('click', function() {
+	$('#PedidoBolsa').off('click').on('click', function() {
 		$.ajax({
-			url : 'gestionAcademica.jsp',
+			url : 'editarDonante.jsp',
 			success : function(data) {
 				$('#asideBase').html(data);
 				$('#aside div').slideDown(1000);
@@ -18,9 +18,18 @@ $(document).ready(function() {
 			}
 		});
 	});	
-	$('.registrarDonante').off('click').on('click', function() {
+	$('.registrarDonante').off('click').on('click', function() {		
 		$.ajax({
-			url : 'registrarDonante.jsp',
+			url : 'regDonante.jsp',
+			success : function(data) {
+				$('#seccionBase').html(data);
+				$('#seccionBase div').slideDown(1000);
+			}
+		});		
+	});	
+	$('.listaDonante').off('click').on('click', function() {		
+		$.ajax({
+			url : 'listaDonantes.jsp',
 			success : function(data) {
 				$('#seccionBase').html(data);
 				$('#seccionBase div').slideDown(1000);
