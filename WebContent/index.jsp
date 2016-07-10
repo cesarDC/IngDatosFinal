@@ -11,167 +11,116 @@
 <script src="js/custom.js"></script>
 <title>Panel de control</title>
 <script type="text/javascript">
-            function logout(){
-                var usuario = $("#usuario").val();
-                var password = $("#password").val();
-                $.ajax({
-                    type: "POST",
-                    url: "sesion",
-                    data: {accion:"LOGOUT"},
-                    success: function(data) {
-                        var result = data.substr(0, 9);
-                        
-                        if(result == "login.jsp") {
-                            window.location = data;
-                        } else {
-                            alert(data);
-                        }
-                    }
-                });
-            }
- </script>
+	function logout() {
+		var usuario = $("#usuario").val();
+		var password = $("#password").val();
+		$.ajax({
+			type : "POST",
+			url : "sesion",
+			data : {
+				accion : "LOGOUT"
+			},
+			success : function(data) {
+				var result = data.substr(0, 9);
+				if (result == "login.jsp") {
+					window.location = data;
+				} else {
+					alert(data);
+				}
+			}
+		});
+	}
+</script>
 </head>
 <body id="inicio">
-
-	<nav class="navbar">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-3" style="display: inline-block">
-					<a href="#inicio"><img src="img/gglogo.jpg"
-						style="padding: 0%; height: 11%; padding-left: 2%" /></a>
-				</div>
-				<div class="col-md-7 label-info" style="display: inline-block">
-					<form class="navbar-form">
-						<fieldset disabled="disabled">
-							<div class="row">
-								<div class="form-group col-md-5" style="">
-									<label for="nombresUsuario">Nombres: </label> <input
-										type="text" class="form-control" id="nombresUsuario"
-										name="nombresUsuario" >
-								</div>
-
-								<div class="form-group col-md-5" style="">
-									<label for="tipoEmpleado">Ocupacion: </label> <select
-										class="form-control" id="tipoEmpleado" name="tipoEmpleado">
-										<option value="1"></option>
-									</select>
-								</div>
-
-								<div class="form-group col-md-2" style="">
-									<img src="img/logo.png"
-										style="padding: 0%; height: 7%; padding-left: 2%; margin-bottom: 10%" />
-								</div>
-							</div>
-							<div class="row">
-								<div class="form-group col-md-6" style="">
-									<label for="apellidopUsuario">Apellido Paterno: </label> <input
-										type="text" class="form-control" id="apellidopUsuario"
-										name="apellidopUsuario">
-								</div>
-								<div class="form-group col-md-6 style="">
-									<label for="apellidomUsuario">Apellido Materno: </label> <input
-										type="text" class="form-control" id="apellidomUsuario"
-										name="apellidomUsuario" >
-								</div>
-							</div>
-						</fieldset>
-					</form>
-				</div>
-				<div class="col-md-2">
-					<a class="btn btn-success" onclick="logout()"">Cerrar Sesion<span
-						class="glyphicon glyphicon-off" style="padding-left: 10%"></span></a>
-				</div>
+	<div id="wrap">
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid" >
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a href="#inicio"><img src="img/logoEmpre2.png"
+					style="padding: 0%; height: 7%; padding-left: 2%" /></a>
+			</div>
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a id="gestionAcademica" class="raya"
+						href="#">Gestion Banco de Sangre <span class="sr-only">(current)</span>
+					</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="login.jsp">Cerrar Sesion <span
+							class="glyphicon glyphicon-off"></span></a></li>
+				</ul>
+				
 			</div>
 		</div>
-
 	</nav>
-	<div id="areaCentro" class="container-fluid">
-		<div class="row">
-			<div class="col-md-3">
-				<div id="asideBase">
-					<div class="list-group">
-						<a href="#" class="list-group-item label-success"
-							data-toggle="collapse" data-target="#gestionHospital"
-							style="color: black"> <span
-							class="glyphicon glyphicon-plus leftheading"></span> Gestión de
-							hospitales
-						</a>
-						<div id="gestionHospital" class="collapse">
-							<a href="#" class="list-group-item list-group-item-success registrarSolicitudUniSangre"> 
-							<span class="leftsubheading glyphicon glyphicon-share-alt leftheading"></span>Pedido de Sangre
-							</a> <a href="#" class="list-group-item list-group-item-success listaSolicitudUniSangre"> <span
-								class="leftsubheading glyphicon glyphicon-list leftheading"></span>Ver
-								lista de solicitudes de unidades de sangre
-							</a>
-						</div>
-						<a href="#" class="list-group-item label-danger"
-							data-toggle="collapse" data-target="#gestionDonante"
-							style="color: black"> <span
-							class="glyphicon glyphicon-user leftheading"></span> Gestión de
-							donantes
-						</a>
-						<div id="gestionDonante" class="collapse">							
-							<a href="#" class="list-group-item list-group-item-success registrarDonante"> <span
-								class="leftsubheading glyphicon glyphicon-share-alt leftheading"></span>Ingresar
-								donante
-							</a> <a href="#" class="list-group-item list-group-item-success listaDonantes"> <span
-								class="leftsubheading glyphicon glyphicon-list leftheading"></span>Ver
-								lista de donantes
-							</a> <a href="#" class="list-group-item list-group-item-success registrarSolicitudDon"> <span
-								class="leftsubheading glyphicon glyphicon-share-alt leftheading"></span>Ingresar
-								solicitud de donación
-							</a> <a href="#" class="list-group-item list-group-item-success listaSolicitudesDon"> <span
-								class="leftsubheading glyphicon glyphicon-list leftheading"></span>Ver
-								lista de solicitudes de donación
-							</a>
-
-						</div>
-					</div>
-					<form class="bg-primary">
-						<fieldset disabled="disabled">
-							<h4 class="text-center">Información del centro de salud</h4>
-							<div class="form-group" style="padding: 0 2% 0 2%">
-								<label for="nombreCS">Nombre de centro de salud: </label> <input
-									type="text" class="form-control" id="nombreCS" 
-																		name="nombreCS">
-							</div>
-							<div class="form-group" style="padding: 0 2% 0 2%">
-								<label for="distritoCS">Distrito: </label> <select
-									class="form-control" id="distritoCS" name="distritoCS">
-									<option value="1"></option>
-								</select>
-							</div>
-
-							<div class="form-group" style="padding: 0 2% 0 2%">
-								<label for="direccionCS">Dirección: </label> <input type="text"
-									class="form-control" id="direccionCS" 
-									
-									name="direccionCS">
-							</div>
-							<div class="form-group" style="padding: 0 2% 0 2%">
-								<label for="telefonoCS">Teléfono: </label> <input type="text"
-									class="form-control" id="telefonoCS"
-									
-									name="telefonoCS">
-							</div>
-						</fieldset>
-
-					</form>
-				</div>
-			</div>
-			<div class="col-md-9">
-				<div id="seccionBase" class="container-fluid bg-info"></div>
+	<div id="areaCentro main" class="container-fluid" >
+	<div class="row">
+		<div class="col-md-3">
+			<div id="asideBase">
+				<ul class="leftbar">
+					<li><span class="glyphicon glyphicon-briefcase leftheading"></span>
+						<h4 class="leftheading">Gestión de Bolsa de Sangre</h4>
+						<ul class="leftbar subheading">
+							<li><a class="PedidoBolsa" href="#">
+								<h5>>> Pedir bolsa de Sangre</h5>
+								</a>
+							</li>
+							<li><a id="ListaPedidos" href="#">
+								<h5>>> Ver lista de pedidos</h5>
+								</a>
+							</li>
+							<li><a class="AgregarBolsa" href="#">
+								<h5>>> Agregar bolsa de Sangre</h5>
+								</a>
+							</li>
+							<li><a id="EditarBolsaSangre" href="#">
+								<h5>>> Editar Bolsa de Sangre</h5>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li><span class="glyphicon glyphicon-education leftheading"></span>
+						<h4 class="leftheading">Gestión de Donantes</h4>
+						<ul class="leftbar subheading ">
+							<li>
+								<a class="registrarDonante" href="#">
+								<h5>>> Añadir Donante</h5>
+								</a>
+							</li>
+							<li>
+								<a class="listaDonante" href="#">
+								<h5>>> Ver lista de Donantes</h5>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
 			</div>
 		</div>
+		<div class="col-md-9">
+			<div id="seccionBase"></div>
+		</div>
+	</div>		
 	</div>
-	<footer class="container-fluid">
+	</div>
+	<footer class="container-fluid">	
 		<ul>
-			<li>Anthony Morán</li>
-			<li>Iván Palomares</li>
-			<li>Jason Rojas</li>
-		</ul>
+			<li>Cesar del Castillo</li>
+			<li>Rossy Espinoza</li>
+			<li>Mitchelli Murgueytio</li>
+			<li>Carlos Ugaz</li>
+		</ul>	
 	</footer>
-
-
+	
+	
 </body>
 </html>
