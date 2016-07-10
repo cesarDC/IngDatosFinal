@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import pe.banco.dao.LoginDAO;
 import pe.banco.dao.impl.LoginDAOImpl;
+import pe.banco.dto.CentroSalud;
 import pe.banco.dto.Usuario;
 
 /**
@@ -66,8 +67,19 @@ public class SesionServlet extends HttpServlet {
 				if (result == null) {
 					LoginDAO daoLogin = new LoginDAOImpl();
 					// user = daoLogin.autenticarUsuario(user);
+					CentroSalud cs = new CentroSalud();
+					cs.setNombreC("holi");
+					cs.setDireccion("Av.Holi");
+					cs.setDistrito("Holilandia");
+					cs.setTelefono(213124);
+					user.setCentroSalud(cs);
+					user.setTipoempleado("Holiador");
+					user.setNombreusuario("Bambino Pons");
+					user.setApellidopat("reholi");
+					user.setApellidomat("holi");
 					user.setNombres("pablito");
 					user.setIdusuario(123);
+					
 					if (user == null) {
 						result = "Usuario no Registrado";
 					} else {
