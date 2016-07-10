@@ -11,6 +11,7 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import ingdatos.grupo3.beans.CentroHospitalario;
+import ingdatos.grupo3.beans.Usuario;
 import oracle.jdbc.internal.OracleTypes;
 
 public class LoginDAO{
