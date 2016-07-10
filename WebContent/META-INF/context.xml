@@ -36,7 +36,7 @@
 
     <Resource name="jdbc/ConexionOracle" auth="Container" type="javax.sql.DataSource"
         maxTotal="20" maxIdle="10" maxWaitMillis="5000"
-        username="system" password="oracle" driverClassName="oracle.jdbc.driver.OracleDriver"
-        url="jdbc:oracle:thin:@//localhost:1521/prd"/> 
+        username="usuario4" password="oracle" driverClassName="oracle.jdbc.driver.OracleDriver"
+        url="jdbc:oracle:thin:@//friccio.com:1521/XE"/> 
 
 </Context>
