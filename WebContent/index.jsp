@@ -1,12 +1,12 @@
-<%@page import="pe.banco.dto.Usuario"%>
+
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<%
+<--%
     String ID = (String) session.getAttribute("ID");
     if (ID == null) {
         response.sendRedirect("login.jsp");
     }
-%>
+%-->
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -38,7 +38,7 @@
  </script>
 </head>
 <body id="inicio">
-<%Usuario usuario = (Usuario)request.getSession().getAttribute("usuario"); %>
+
 	<nav class="navbar">
 		<div class="container-fluid">
 			<div class="row">
@@ -53,13 +53,13 @@
 								<div class="form-group col-md-5" style="">
 									<label for="nombresUsuario">Nombres: </label> <input
 										type="text" class="form-control" id="nombresUsuario"
-										name="nombresUsuario" value="<%=usuario.getNombres()%>">
+										name="nombresUsuario" >
 								</div>
 
 								<div class="form-group col-md-5" style="">
 									<label for="tipoEmpleado">Ocupacion: </label> <select
 										class="form-control" id="tipoEmpleado" name="tipoEmpleado">
-										<option value="1"><%=usuario.getTipoempleado()%>></option>
+										<option value="1"></option>
 									</select>
 								</div>
 
@@ -72,12 +72,12 @@
 								<div class="form-group col-md-6" style="">
 									<label for="apellidopUsuario">Apellido Paterno: </label> <input
 										type="text" class="form-control" id="apellidopUsuario"
-										name="apellidopUsuario" value="<%=usuario.getApellidopat()%>">
+										name="apellidopUsuario">
 								</div>
 								<div class="form-group col-md-6 style="">
 									<label for="apellidomUsuario">Apellido Materno: </label> <input
 										type="text" class="form-control" id="apellidomUsuario"
-										name="apellidomUsuario" value="<%=usuario.getApellidomat()%>">
+										name="apellidomUsuario" >
 								</div>
 							</div>
 						</fieldset>
@@ -140,26 +140,25 @@
 							<div class="form-group" style="padding: 0 2% 0 2%">
 								<label for="nombreCS">Nombre de centro de salud: </label> <input
 									type="text" class="form-control" id="nombreCS" 
-									value="<%=usuario.getCentroSalud().getNombreC()%>"
-									name="nombreCS">
+																		name="nombreCS">
 							</div>
 							<div class="form-group" style="padding: 0 2% 0 2%">
 								<label for="distritoCS">Distrito: </label> <select
 									class="form-control" id="distritoCS" name="distritoCS">
-									<option value="1"><%=usuario.getCentroSalud().getDistrito()%></option>
+									<option value="1"></option>
 								</select>
 							</div>
 
 							<div class="form-group" style="padding: 0 2% 0 2%">
 								<label for="direccionCS">Dirección: </label> <input type="text"
 									class="form-control" id="direccionCS" 
-									value="<%=usuario.getCentroSalud().getDireccion()%>"
+									
 									name="direccionCS">
 							</div>
 							<div class="form-group" style="padding: 0 2% 0 2%">
 								<label for="telefonoCS">Teléfono: </label> <input type="text"
 									class="form-control" id="telefonoCS"
-									value="<%=usuario.getCentroSalud().getTelefono()%>"
+									
 									name="telefonoCS">
 							</div>
 						</fieldset>
