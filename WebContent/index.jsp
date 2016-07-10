@@ -1,12 +1,6 @@
 
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<--%
-    String ID = (String) session.getAttribute("ID");
-    if (ID == null) {
-        response.sendRedirect("login.jsp");
-    }
-%-->
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -103,9 +97,8 @@
 							hospitales
 						</a>
 						<div id="gestionHospital" class="collapse">
-							<a href="#" class="list-group-item list-group-item-success registrarSolicitudUniSangre"> <span
-								class="leftsubheading glyphicon glyphicon-share-alt leftheading"></span>Ingresar
-								solicitud de unidad de sangre
+							<a href="#" class="list-group-item list-group-item-success registrarSolicitudUniSangre"> 
+							<span class="leftsubheading glyphicon glyphicon-share-alt leftheading"></span>Pedido de Sangre
 							</a> <a href="#" class="list-group-item list-group-item-success listaSolicitudUniSangre"> <span
 								class="leftsubheading glyphicon glyphicon-list leftheading"></span>Ver
 								lista de solicitudes de unidades de sangre

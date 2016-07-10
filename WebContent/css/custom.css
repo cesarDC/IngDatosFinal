@@ -18,3 +18,10 @@
 	height: 34%;
 	margin-bottom: 4%
 }
+.fullscreen_bg {
+    position: fixed;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url("../img/backgrounds/1.jpg");
+    background-repeat:repeat;
+  }
