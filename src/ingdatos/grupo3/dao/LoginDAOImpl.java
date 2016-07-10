@@ -1,4 +1,4 @@
-package pe.banco.dao.impl;
+package ingdatos.grupo3.dao;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -10,10 +10,10 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import ingdatos.grupo3.beans.CentroHospitalario;
+import ingdatos.grupo3.beans.Usuario;
 import oracle.jdbc.internal.OracleTypes;
 import pe.banco.dao.LoginDAO;
-import pe.banco.dto.CentroHospitalario;
-import pe.banco.dto.Usuario;
 
 public class LoginDAOImpl implements LoginDAO {
 	String message=null;

@@ -1,4 +1,4 @@
-package pe.banco.dao.impl;
+package ingdatos.grupo3.dao;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,8 +12,8 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import ingdatos.grupo3.beans.Local;
 import pe.banco.dao.AnalisisDAO;
-import pe.banco.dto.Local;
 
 public class AnalisisDAOImpl implements AnalisisDAO{
 	private String message=null;

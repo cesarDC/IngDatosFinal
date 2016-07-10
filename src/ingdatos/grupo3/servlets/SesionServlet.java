@@ -1,4 +1,4 @@
-package pe.banco.servlets;
+package ingdatos.grupo3.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ingdatos.grupo3.beans.CentroSalud;
+import ingdatos.grupo3.beans.Usuario;
+import ingdatos.grupo3.dao.LoginDAOImpl;
 import pe.banco.dao.LoginDAO;
-import pe.banco.dao.impl.LoginDAOImpl;
-import pe.banco.dto.CentroSalud;
-import pe.banco.dto.Usuario;
 
 /**
  * Servlet implementation class SesionServlet

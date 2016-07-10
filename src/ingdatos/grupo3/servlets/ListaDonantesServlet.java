@@ -1,4 +1,4 @@
-package pe.banco.servlets;
+package ingdatos.grupo3.servlets;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import pe.banco.dao.impl.DonanteDAOImpl;
-import pe.banco.dto.Donante;
+import ingdatos.grupo3.beans.Donante;
+import ingdatos.grupo3.dao.DonanteDAOImpl;
 
 /**
  * Servlet implementation class ListaDonantesServlet

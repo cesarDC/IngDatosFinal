@@ -1,6 +1,5 @@
-package pe.banco.dto;
+package ingdatos.grupo3.beans;
 
-import java.io.File;
 
 public class CentroHospitalario {
 	private int idCentro;

@@ -1,4 +1,4 @@
-package pe.banco.dao.impl;
+package ingdatos.grupo3.dao;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -12,9 +12,9 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import ingdatos.grupo3.beans.Donante;
 import oracle.jdbc.internal.OracleTypes;
 import pe.banco.dao.DonanteDAO;
-import pe.banco.dto.Donante;
 
 public class DonanteDAOImpl implements DonanteDAO {
 	String message;

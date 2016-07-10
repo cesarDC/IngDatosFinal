@@ -1,4 +1,4 @@
-package pe.banco.dao.impl;
+package ingdatos.grupo3.dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -9,8 +9,8 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import ingdatos.grupo3.beans.BolsaSangre;
 import pe.banco.dao.UnidadesSangreDAO;
-import pe.banco.dto.BolsaSangre;
 
 public class UnidadesSangreDAOImpl implements UnidadesSangreDAO {
 

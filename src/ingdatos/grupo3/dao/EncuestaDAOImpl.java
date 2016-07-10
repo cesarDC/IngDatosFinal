@@ -1,4 +1,4 @@
-package pe.banco.dao.impl;
+package ingdatos.grupo3.dao;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,8 +12,8 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import ingdatos.grupo3.beans.Encuesta;
 import pe.banco.dao.EncuestaDAO;
-import pe.banco.dto.Encuesta;
 
 public class EncuestaDAOImpl implements EncuestaDAO{
 	private String message=null;
