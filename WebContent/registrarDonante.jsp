@@ -1,0 +1,102 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css" />
+<script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+<script src="js/jquery-2.2.3.js"></script>
+<link rel="stylesheet" href="css/custom2.css" />
+<script src="js/custom.js">
+	
+</script>
+<title>Panel de control</title>
+</head>
+<body>
+
+	<h4 class="section-titulo">Formulario para ingresar donante</h4>
+	<form id="postDonante" action="donante" method="post">		
+		<div class="row">
+			<div class="form-group col-md-4" style="">
+				<label for="nombre">Nombres</label> <input type="text"
+					class="form-control" id="nombre" placeholder="Escribir nombre"
+					name="nombre">
+			</div>
+			<div class="form-group col-md-4" style="">
+				<label for="apellidopaterno">Apellido Paterno</label> <input
+					type="text" class="form-control" id="apellidopaterno"
+					placeholder="Escribir apellido paterno" name="apellidop">
+			</div>
+			<div class="form-group col-md-4" style="">
+				<label for="apellidomaterno">Apellido Materno</label> <input
+					type="text" class="form-control" id="apellidomaterno"
+					placeholder="Escribir apellido materno" name="apellidom">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-md-2" style="">
+				<label for="tipoSangre">Tipo de sangre</label> <select
+					id="tipoSangre" class="form-control" name="tipoSangre">
+					<option value="1">O+</option>
+				</select>
+			</div>
+			<div class="form-group col-md-5" style="">
+				<label for="email">Correo electrónico</label> <input type="email"
+					class="form-control" id="email" placeholder="Escribir email"
+					name="email">
+			</div>
+			<div class="form-group col-md-2" style="">
+				<label for="tipoDonante">Tipo de donante</label> <select
+					id="tipoDonante" class="form-control" name="tipoDonante">
+					<option value="V">Voluntario</option>
+				</select>
+			</div>
+			<div class="form-group col-md-3" style="">
+				<label for="distrito">Distrito</label> <select id="distrito"
+					class="form-control" name="distrito">
+					<option value="1">Surco</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-md-6" style="">
+				<label for="direccion">Dirección</label> <input type="text"
+					class="form-control" id="direccion"
+					placeholder="Escribir dirección" name="direccion">
+			</div>
+
+			<div class="form-group col-md-3" style="">
+				<label for="edad">Edad</label> <input type="number"
+					class="form-control" id="edad" placeholder="Escribir edad"
+					name="edad">
+			</div>
+			<div class="form-group col-md-3" style="">
+				<label for="fechaNac">Fecha de nacimiento</label> <input type="date"
+					class="form-control" id="fechaNac" name="fechaNac">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-md-4" style="">
+				<label for="telefono">Teléfono fijo</label> <input type="number"
+					class="form-control" id="telefono" placeholder="Escribir telefono"
+					name="telefono">
+			</div>
+			<div class="form-group col-md-4" style="">
+				<label for="celular">Celular</label> <input type="number"
+					class="form-control" id="celular" placeholder="Escribir celular"
+					name="celular">
+			</div>
+			<div class="form-group col-md-4" style="">
+				<label for="dni">DNI</label> <input type="text" class="form-control"
+					id="dni" placeholder="Escribir dni" name="dni">
+			</div>
+		</div>
+		<button type="submit" class="btn btn-danger">
+			<span class="glyphicon glyphicon-plus"></span> <span>Ingresar
+				registro</span>
+		</button>
+
+	</form>
+
+</body>
+</html>
