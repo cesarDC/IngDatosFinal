@@ -68,6 +68,7 @@ public class DonanteServlet extends HttpServlet {
 		Donante donante=new Donante(dni, nombre, apellidop, apellidom, tipoSangre, correo, 
 				tipoDonante, direccion, idDistrito, null, telefono, fechaNac, edad, celular,
 				null, null);
+		
 		donanteDAOImpl.ingresarDonante(donante);
 		String msg=donanteDAOImpl.getMessage();
 		RequestDispatcher rd=request.getRequestDispatcher("confirmar.jsp");

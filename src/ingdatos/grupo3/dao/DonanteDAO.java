@@ -2,6 +2,7 @@ package ingdatos.grupo3.dao;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -18,43 +19,84 @@ import oracle.jdbc.internal.OracleTypes;
 public class DonanteDAO {
 	String message;
 	
+	
+	
 	public String getMessage() {
 		return message;
 	}
+	/*
+	public void prueba(){
+	
+	System.out.println("-------- Oracle JDBC Connection Testing ------");
+
+	try {
+
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+
+	} catch (ClassNotFoundException e) {
+
+		System.out.println("Where is your Oracle JDBC Driver?");
+		e.printStackTrace();
+		return;
+
+	}
+
+	System.out.println("Oracle JDBC Driver Registered!");
+
+	Connection connection = null;
+
+	try {
+
+		connection = DriverManager.getConnection(
+				"jdbc:oracle:thin:@friccio.com:1521:XE", "usuario4",
+				"oracle");
+
+	} catch (SQLException e) {
+
+		System.out.println("Connection Failed! Check output console");
+		e.printStackTrace();
+		return;
+
+	}
+
+	if (connection != null) {
+		System.out.println("You made it, take control your database now!");
+	} else {
+		System.out.println("Failed to make connection!");
+	}
+	}
+
+*/
+
 
 	
 	public String ingresarDonante(Donante donante) {
-		Context initContext;
+		String msg;
+		
 		Connection conn=null;
 		CallableStatement cs=null;
-		String sql="{call package pkg_donantex.reg_donante (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+		String sql="{call PR_insertarDonante(?,?,?,?,?,?,?)}";
 		try {
-			initContext=new InitialContext();
-			DataSource ds = (DataSource) initContext.lookup("java:/comp/env/jdbc/ConexionOracle");
-			conn=ds.getConnection();
+			//initContext=new InitialContext();
+			//DataSource ds = (DataSource) initContext.lookup("java:/comp/env/jdbc/ConexionOracle");
+			conn = DriverManager.getConnection(
+				"jdbc:oracle:thin:@friccio.com:1521:XE", "usuario4",
+				"oracle");
 			cs=conn.prepareCall(sql);
-			cs.setString(1,donante.getDnidon());
-			cs.setString(2, donante.getNombres());
-			cs.setString(3, donante.getApellidopat());
-			cs.setString(4, donante.getApellidomat());
-			cs.setString(5, donante.getTiposangre()); 
-			cs.setString(6, donante.getCorreo());
-			cs.setString(7, donante.getTipodonante().toString());
-			cs.setString(8, donante.getDireccion());
-			cs.setInt(9, donante.getIddistrito());
-			cs.setInt(10, donante.getTelefono());
-			cs.setString(11, donante.getFechanac());
-			cs.setInt(12, donante.getEdad());
-			cs.setInt(13, donante.getCelular());
-			cs.setString(14, null);
-			cs.setString(15,null);
+			
+			cs.setInt(1,donante.getDNI());
+			cs.setString(2, donante.getNombre());
+			cs.setString(3, donante.getApellido());
+			cs.setString(4, donante.getSexo()); 
+			cs.setInt(5, donante.getNumTelf());
+			cs.setInt(6, donante.getPeso());
+			cs.setString(7, donante.getfechaNacimiento());
+			//cs.setString(7, donante.getfechaNacimiento());
 			cs.executeUpdate();
-			message="Donante registrado";
+			msg="Donante registrado";
 		}catch (SQLException ex){
-			message=ex.getMessage();
-		} catch (NamingException e) {
-			// TODO Auto-generated catch block
-			message=e.getMessage();
+			msg=ex.getMessage();
+	
 		} finally {
 			try {
 				if(cs !=null){
@@ -64,13 +106,13 @@ public class DonanteDAO {
 					conn.close();
 				}
 			} catch (SQLException ex){
-				message=ex.getMessage();
+				msg=ex.getMessage();
 			}
 			
 		}
-		return message;
+		return msg;
 	}
-
+/*
 
 	public String modificarDonante(Donante donante) {
 		Context initContext;
@@ -276,4 +318,5 @@ public class DonanteDAO {
 		return donante;
 	}
 
+*/
 }
