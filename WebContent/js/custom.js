@@ -45,7 +45,7 @@ $(document).ready(function() {
 			}
 		});		
 	});
-	$('.registrarSolicitudUniSangrea').off('click').on('click', function() {
+	$('.registrarSolicitudUniSangre').off('click').on('click', function() {
 		$.ajax({
 			url : 'registrarSolicitudUniSangre.jsp',
 			success : function(data) {
