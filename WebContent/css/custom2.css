@@ -7,7 +7,7 @@ a {
 	font-size: 19.5px;	
 }
 a:focus, a:hover, a:active {
-	color: #F26F21;
+	color: #d9534f;
 }
 
 .navbar {

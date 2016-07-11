@@ -2,22 +2,33 @@
  * 
  */
 $(document).ready(function() {
-	$('#PedidoBolsa').off('click').on('click', function() {
+	$('.PedidoBolsa').off('click').on('click', function() {
 		$.ajax({
-			url : 'editarDonante.jsp',
-			success : function(data) {
-				$('#asideBase').html(data);
-				$('#aside div').slideDown(1000);
-			}
-		});
-		$.ajax({
-			url : 'blank.jsp',
+			url : 'pedidoSangre.jsp',
 			success : function(data) {
 				$('#seccionBase').html(data);
-				$('#seccion div').slideDown(1000);
+				$('#seccionBase div').slideDown(1000);
 			}
-		});
+		});	
+	});
+	$('.ListaPedidos').off('click').on('click', function() {		
+		$.ajax({
+			url : 'listaPedidos.jsp',
+			success : function(data) {
+				$('#seccionBase').html(data);
+				$('#seccionBase div').slideDown(1000);
+			}
+		});		
 	});	
+	$('.AgregarBolsa').off('click').on('click', function() {
+		$.ajax({
+			url : 'regBolsaSangre.jsp',
+			success : function(data) {
+				$('#seccionBase').html(data);
+				$('#seccionBase div').slideDown(1000);
+			}
+		});	
+	});
 	$('.registrarDonante').off('click').on('click', function() {		
 		$.ajax({
 			url : 'regDonante.jsp',
@@ -26,7 +37,7 @@ $(document).ready(function() {
 				$('#seccionBase div').slideDown(1000);
 			}
 		});		
-	});	
+	});
 	$('.listaDonante').off('click').on('click', function() {		
 		$.ajax({
 			url : 'listaDonantes.jsp',
@@ -36,24 +47,33 @@ $(document).ready(function() {
 			}
 		});		
 	});
-	$('.registrarSolicitudDon').off('click').on('click', function() {
+	$('.registrarPrueba').off('click').on('click', function() {		
 		$.ajax({
-			url : 'registrarSolicitudDon.jsp',
+			url : 'Prueba.jsp',
 			success : function(data) {
 				$('#seccionBase').html(data);
 				$('#seccionBase div').slideDown(1000);
 			}
 		});		
 	});
-	$('.registrarSolicitudUniSangre').off('click').on('click', function() {
+	$('.listaPrueba').off('click').on('click', function() {		
 		$.ajax({
-			url : 'registrarSolicitudUniSangre.jsp',
+			url : 'listaPruebas.jsp',
 			success : function(data) {
 				$('#seccionBase').html(data);
 				$('#seccionBase div').slideDown(1000);
 			}
 		});		
-	});	
+	});
+	$('.EditarBolsaSangre').off('click').on('click', function() {		
+		$.ajax({
+			url : 'editarBolsaSangre.jsp',
+			success : function(data) {
+				$('#seccionBase').html(data);
+				$('#seccionBase div').slideDown(1000);
+			}
+		});		
+	});
 	$('#confirmar').off('click').on('click', function() {
 		if ($('body')) {
 			$.ajax({

@@ -74,7 +74,7 @@
 								<h5>>> Pedir bolsa de Sangre</h5>
 								</a>
 							</li>
-							<li><a id="ListaPedidos" href="#">
+							<li><a class="ListaPedidos" href="#">
 								<h5>>> Ver lista de pedidos</h5>
 								</a>
 							</li>
@@ -82,7 +82,7 @@
 								<h5>>> Agregar bolsa de Sangre</h5>
 								</a>
 							</li>
-							<li><a id="EditarBolsaSangre" href="#">
+							<li><a class="EditarBolsaSangre" href="#">
 								<h5>>> Editar Bolsa de Sangre</h5>
 								</a>
 							</li>
@@ -99,6 +99,21 @@
 							<li>
 								<a class="listaDonante" href="#">
 								<h5>>> Ver lista de Donantes</h5>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li><span class="glyphicon glyphicon-education leftheading"></span>
+						<h4 class="leftheading">Gestión de Pruebas</h4>
+						<ul class="leftbar subheading ">
+							<li>
+								<a class="registrarPrueba" href="#">
+								<h5>>> Añadir Puebas</h5>
+								</a>
+							</li>
+							<li>
+								<a class="listaPrueba" href="#">
+								<h5>>> Ver lista de Pruebas</h5>
 								</a>
 							</li>
 						</ul>
