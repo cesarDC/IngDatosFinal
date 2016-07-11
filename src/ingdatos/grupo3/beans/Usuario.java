@@ -5,8 +5,11 @@ public class Usuario {
 	private String nombreUsuario;
 	private String password;
 	private String tipoEmpleado;
-	private int idLocal;
+	private int idLocal;	
 	
+	public Usuario() {
+		super();
+	}
 	public Usuario(int idUsuario, String nombreUsuario, String password, String tipoEmpleado, int idLocal) {
 		super();
 		this.idUsuario = idUsuario;

@@ -6,16 +6,27 @@ public class Local {
 	private boolean bancoSangre;
 	private int idCentroHosp;
 	private int idDistrito;	
+	private String nombre;
+	
 	public Local() {
 		super();
 	}
-	public Local(String idLocal, String direccion, boolean bancoSangre, int idCentroHosp, int idDistrito) {
+	public Local(String idLocal, String direccion, boolean bancoSangre,
+			int idCentroHosp, int idDistrito,String nombre) {
 		super();
 		this.idLocal = idLocal;
 		this.direccion = direccion;
 		this.bancoSangre = bancoSangre;
 		this.idCentroHosp = idCentroHosp;
 		this.idDistrito = idDistrito;
+		this.nombre = nombre;
+	}	
+	
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 	public String getIdLocal() {
 		return idLocal;

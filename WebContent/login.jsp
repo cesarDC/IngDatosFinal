@@ -51,7 +51,7 @@
                         		<img alt="" src="img/circulito.png">
                         	<div >
                         		<h1 style="font-weight: bold;font-size: 300%">EMPRE S.A</h1>
-                        		<h3 style="color: white">Brindando soluciones de TI</h1>
+                        		<h3 style="color: white">Brindando soluciones de TI</h3>
                         	</div>
                         	
                            
@@ -66,14 +66,14 @@
                         		</div>
                             </div>
                             <div class="form-bottom">
-			                    <form role="form" action="" method="post" class="login-form">
+			                    <form role="form" action="login" method="post" class="login-form">
 			                    	<div class="form-group">
 			                    		<label class="sr-only" for="form-username">Username</label>
-			                        	<input type="text" name="form-username" placeholder="Usuario" class="form-username form-control" id="form-username" required>
+			                        	<input type="text" name="user" placeholder="Usuario" class="form-username form-control" id="form-username" required>
 			                        </div>
 			                        <div class="form-group">
 			                        	<label class="sr-only" for="form-password">Password</label>
-			                        	<input type="password" name="form-password" placeholder="Contraseña" class="form-password form-control" id="form-password" required>
+			                        	<input type="password" name="pass" placeholder="Contraseña" class="form-password form-control" id="form-password" required>
 			                        </div>
 			                        <button type="submit" class="btn">Ingresar</button>
 			                    </form>

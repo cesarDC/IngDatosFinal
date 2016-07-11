@@ -161,6 +161,8 @@ public class DonanteDAO {
 		}
 		return message;
 	}
+	
+	/*
 
 	
 	public String eliminarDonante(Donante donante) {

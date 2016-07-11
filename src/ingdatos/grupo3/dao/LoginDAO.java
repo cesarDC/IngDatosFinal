@@ -2,8 +2,12 @@ package ingdatos.grupo3.dao;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -16,48 +20,50 @@ import oracle.jdbc.internal.OracleTypes;
 
 public class LoginDAO{
 	String message=null;
+	
+	private Connection conectarse(){
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			return DriverManager.getConnection(
+					"jdbc:oracle:thin:@friccio.com:1521:XE", "usuario4",
+					"oracle");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 
 	
 	public Usuario autenticarUsuario(Usuario user) {
-		Context initContext;
-		Connection conn=null;
-		String sql= "{call pkg_extras.info_panel(?,?,?,?)}";
-		Usuario usuario = null;
-		CentroHospitalario centro=null;
+		
+		Connection conn = conectarse();
+		
 		try {
-			initContext=new InitialContext();
-			DataSource ds = (DataSource) initContext.lookup("java:/comp/env/jdbc/ConexionOracle");
-			conn=ds.getConnection();
-			CallableStatement cs=conn.prepareCall(sql);
-			ResultSet rs;
-			ResultSet rs2;
-			cs.setString(1, user.getNombreusuario());
-			cs.setString(2, user.getPassword());
-			cs.registerOutParameter(3, OracleTypes.CURSOR);
-			cs.registerOutParameter(4, OracleTypes.CURSOR);
-			cs.executeQuery();
-			rs = (ResultSet) cs.getObject(3);
-			rs2 = (ResultSet) cs.getObject(4);
-			while (rs.next() && rs2.next()) {
-				usuario = new Usuario();
-				usuario.setNombres(rs.getString("nombres"));
-				usuario.setApellidomat(rs.getString("apellidomat"));
-				usuario.setApellidopat(rs.getString("apellidopat"));
-				centro= new CentroHospitalario();
-				centro.setNombreC(rs2.getString("nombrecentro"));
-				centro.setDistrito(rs2.getString("nombre"));
-				centro.setDireccion(rs2.getString("direccion"));
-				centro.setTelefono(rs2.getInt("telefono"));
-				usuario.setCentroSalud(centro);
-			}					
-			cs.executeQuery();
-		}catch (SQLException ex){
-			message=ex.getMessage();
-		} catch (NamingException e) {
-			// TODO Auto-generated catch block
-			message=e.getMessage();
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("execute ");
+			List<Profesor> profesores = new ArrayList<Profesor>();
+			while(rs.next()){
+				profesores.add(new Profesor(
+						rs.getInt("id"),
+						rs.getString("nombres"),
+						rs.getString("apellido_paterno"),
+						rs.getString("apellido_materno"),
+						rs.getString("dni"),
+						rs.getString("foto_url"),
+						rs.getInt("id_estudio"),
+						nombreEst(rs.getInt("id_estudio"))
+				));
+			}
+			desconectarse(conn);
+			return profesores;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			desconectarse(conn);
+			return null;
 		}
-		return usuario;
 	}
 
 	public String getMessage() {
