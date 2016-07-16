@@ -57,11 +57,11 @@ public class LoginDAO{
 						nombreEst(rs.getInt("id_estudio"))
 				));
 			}
-			desconectarse(conn);
+			conn.close();
 			return profesores;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			desconectarse(conn);
+			conn.close();
 			return null;
 		}
 	}

@@ -135,7 +135,7 @@ public class DonanteDAO {
 		CallableStatement cs=null;
 		ResultSet rs=null;
 		
-		String sql="{call package pkg_donantex.lista_donantes (?)}";
+		String sql="{call PR_listarDonantes(?)}";
 		
 		List<Donante> listDonantes = new ArrayList<>();;
 		try {
@@ -182,18 +182,18 @@ public class DonanteDAO {
 	}
 	
 	
-	public Donante getDonante(String dni) {
+	public Donante getDonante(int dni) {
 		String msg;
 		Connection conn = ConexionDAO.conectarse();
 		CallableStatement cs=null;
 		
 		ResultSet rs=null;
-		String sql="{call package pkg_donantex.obtener_donante (?,?)}";
+		String sql="{call PR_obtenerDonante(?,?)}";
 		Donante donante=new Donante();
 		try {
 			
 			cs=conn.prepareCall(sql);			
-			cs.setString(1,dni);
+			cs.setInt(1,dni);
 			cs.registerOutParameter(2, OracleTypes.CURSOR);
 			cs.executeQuery();
 			rs = (ResultSet)cs.getObject(2);
