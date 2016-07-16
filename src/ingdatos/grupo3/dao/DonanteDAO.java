@@ -60,7 +60,7 @@ public class DonanteDAO {
 		}
 		return msg;
 	}
-
+/*
 
 	public String modificarDonante(Donante donante) {
 		Context initContext;
@@ -110,7 +110,7 @@ public class DonanteDAO {
 		return message;
 	}
 	
-	
+	*/
 
 	
 	public String eliminarDonante(Donante donante) {
@@ -146,7 +146,7 @@ public class DonanteDAO {
 		}
 		return message;
 	}
-
+/*
 	
 	public List<Donante> listarDonantes(){
 		Context initContext;
@@ -206,7 +206,7 @@ public class DonanteDAO {
 		}
 		return listDonantes;
 	}
-	/*
+	
 	
 	public Donante getDonante(String dnidon) {
 		Context initContext;
