@@ -18,26 +18,7 @@
 <link rel="stylesheet" href="css/custom.css"/>
 <link rel="stylesheet" href="css/social-buttons-3.css"/>
 <link rel="stylesheet" href="css/font-awesome.css"/>
-<script type="text/javascript">
-            function login(){
-                var usuario = $("#usuario").val();
-                var password = $("#password").val();
-                $.ajax({
-                    type: "POST",
-                    url: "sesion",
-                    data: {accion:"LOGIN",usuario:usuario,password:password},
-                    success: function(data) {
-                        var result = data.substr(0, 10);
-                        
-                        if(result == "sesion.jsp") {
-                            window.location = data;
-                        } else {
-                            alert(data);
-                        }
-                    }
-                });
-            }
- </script>
+
 
 <title>Login</title>
 </head>
@@ -66,7 +47,7 @@
                         		</div>
                             </div>
                             <div class="form-bottom">
-			                    <form role="form" action="login" method="post" class="login-form">
+			                    <form role="form" action="login" method="post" class="#">
 			                    	<div class="form-group">
 			                    		<label class="sr-only" for="form-username">Username</label>
 			                        	<input type="text" name="user" placeholder="Usuario" class="form-username form-control" id="form-username" required>
@@ -75,7 +56,7 @@
 			                        	<label class="sr-only" for="form-password">Password</label>
 			                        	<input type="password" name="pass" placeholder="Contraseña" class="form-password form-control" id="form-password" required>
 			                        </div>
-			                        <button type="submit" class="btn">Ingresar</button>
+			                        <button type="submit"  class="btn">Ingresar</button>
 			                    </form>
 		                    </div>
                         </div>

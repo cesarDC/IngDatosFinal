@@ -34,7 +34,7 @@ public class DonanteDAO {
 			cs.setInt(7, donante.getPeso());
 			cs.setString(8, donante.getFechaNacimiento());
 			cs.setString(9, donante.getEstado());
-			cs.setInt(10, donante.getIdtipoSangre());
+			cs.setString(10, donante.getIdtipoSangre());
 			cs.executeUpdate();
 			msg="Donante registrado";
 		}catch (SQLException ex){
@@ -76,7 +76,7 @@ public class DonanteDAO {
 			cs.setInt(7, donante.getPeso());
 			cs.setString(8, donante.getFechaNacimiento());
 			cs.setString(9, donante.getEstado());
-			cs.setInt(10, donante.getIdtipoSangre());
+			cs.setString(10, donante.getIdtipoSangre());
 			
 			cs.executeUpdate();
 			msg="Donante actualizado";
@@ -135,7 +135,7 @@ public class DonanteDAO {
 		CallableStatement cs=null;
 		ResultSet rs=null;
 		
-		String sql="{call package pkg_donantex.lista_donantes (?)}";
+		String sql="{call PR_listarDonantes(?)}";
 		
 		List<Donante> listDonantes = new ArrayList<>();;
 		try {
@@ -156,7 +156,7 @@ public class DonanteDAO {
 				donante.setPeso(rs.getInt("peso"));
 				donante.setFechaNacimiento("FechaNacimiento");
 				donante.setEstado(rs.getString("estado"));
-				donante.setIdtipoSangre(rs.getInt("idtiposangre"));
+				donante.setIdtipoSangre(rs.getString("idtiposangre"));
 				
 				listDonantes.add(donante);
 			}
@@ -188,7 +188,7 @@ public class DonanteDAO {
 		CallableStatement cs=null;
 		
 		ResultSet rs=null;
-		String sql="{call package pkg_donantex.obtener_donante (?,?)}";
+		String sql="{call PR_obtenerDonante(?,?)}";
 		Donante donante=new Donante();
 		try {
 			
@@ -207,7 +207,7 @@ public class DonanteDAO {
 				donante.setPeso(rs.getInt("peso"));
 				donante.setFechaNacimiento("FechaNacimiento");
 				donante.setEstado(rs.getString("estado"));
-				donante.setIdtipoSangre(rs.getInt("idtiposangre"));
+				donante.setIdtipoSangre(rs.getString("idtiposangre"));
 			}else{
 				msg="Donante no encontrado";
 			}

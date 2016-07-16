@@ -14,10 +14,10 @@ import ingdatos.grupo3.beans.Usuario;
 import ingdatos.grupo3.dao.LoginDAO;
 
 @WebServlet("/login")
-public class SesionServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public SesionServlet() {
+	public LoginServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -25,8 +25,8 @@ public class SesionServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-	RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-	rd.forward(request, response);
+	//RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+	//rd.forward(request, response);
 		// TODO Auto-generated method stub
 	}
 
@@ -38,12 +38,25 @@ public class SesionServlet extends HttpServlet {
 		Usuario user = new Usuario();
 		
 		LoginDAO daoLogin = new LoginDAO();
-		//user = daoLogin.autenticarUsuario(user);
-					
-					
-		String rpta = "index.jsp";    		
-		RequestDispatcher rd = request.getRequestDispatcher(rpta);
-		rd.forward(request, response);
+		user = daoLogin.getDonante(usuario,password);
+		try{
+			
+		
+		if(user.getNombreUsuario().equalsIgnoreCase(usuario)){
+			String rpta = "index.jsp";    		
+			RequestDispatcher rd = request.getRequestDispatcher(rpta);
+			rd.forward(request, response);
+		}else{
+			String rpta = "login.jsp";    		
+			RequestDispatcher rd = request.getRequestDispatcher(rpta);
+			rd.forward(request, response);			
+		}
+		}catch(NullPointerException ex){
+			String rpta = "login.jsp";    		
+			RequestDispatcher rd = request.getRequestDispatcher(rpta);
+			rd.forward(request, response);	
+		}
+		
 		}
 	}
 

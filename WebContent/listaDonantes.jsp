@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -19,59 +21,29 @@
 		<table class="table table-striped ">
 			<thead>
 				<tr>
-					<th><center>DNI</center></th>
-					<th><center>Nombre completo</center></th>
-					<th><center>Sexo</center></th>
-					<th><center>Tipo de sangre</center></th>
-					<th><center>Numero Telefonico</center></th>
-					<th><center>Acciones</center></th>
+					<th>DNI</th>
+					<th>Nombre completo</th>
+					<th>Sexo</th>
+					<th>Tipo de sangre</th>
+					<th>Numero Telefonico</th>
+					<th>Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
+			<% System.out.print("antes"); %>	
+				<c:forEach var="x"  items="${sessionScope.listaDonantes}">
+				<% System.out.print("fila"); %>	
 				<tr>
-					<td><center>20131349</center></td>
-					<td><center>Carlos Gabriel Ugaz Burga</center></td>
-					<td><center>Masculino</center></td>
-					<td><center>A(+)</center></td>
-					<td><center>989012130</center></td>
-					<td><center><a class="editarDonante" href="#" data-index=""
-						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
-						<a class="verDonante" href="#" data-index=""
-						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
-				</tr>
-				<tr>
-					<td><center>20133333</center></td>
-					<td><center>Cesar Ugaz Burga</center></td>
-					<td><center>Masculino</center></td>
-					<td><center>A(+)</center></td>
-					<td><center>98901212130</center></td>
-					<td><center><a class="editarDonante" href="#" data-index=""
-						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
-						<a class="verDonante" href="#" data-index=""
-						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
-				</tr>
-				<tr>
-					<td><center>2013131149</center></td>
-					<td><center>Rossy Espinoza</center></td>
-					<td><center>Femenino</center></td>
-					<td><center>A(+)</center></td>
-					<td><center>994039231</center></td>
-					<td><center><a class="editarDonante" href="#" data-index=""
-						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
-						<a class="verDonante" href="#" data-index=""
-						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
-				</tr>
-				<tr>
-					<td><center>201123414</center></td>
-					<td><center>Mitchelli Trigueros</center></td>
-					<td><center>Masculino</center></td>
-					<td><center>AB(+)</center></td>
-					<td><center>98901122130</center></td>
-					<td><center><a class="editarDonante" href="#" data-index=""
-						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
-						<a class="verDonante" href="#" data-index=""
-						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
-				</tr>
+				<td><c:out value="${x.DNI}" /></td>
+				<td><c:out value="${x.nombre}" /> <c:out value="${x.apellidoP}" /> <c:out value="${x.apellidoM}" /></td>
+				<td><c:out value="${x.sexo}"/></td>
+				<td><c:out value="${x.idtipoSangre}" /></td>
+				<td><c:out value="${x.numTelf}" /></td>
+				<td><center><a class="editarDonante" href="#" data-index="" data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a class="verDonante" href="#" data-index="" data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
+             </td>
+             </tr>
+              </c:forEach>
 			</tbody>
 		</table>
 	</div>

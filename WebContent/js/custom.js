@@ -40,7 +40,7 @@ $(document).ready(function() {
 	});
 	$('.listaDonante').off('click').on('click', function() {		
 		$.ajax({
-			url : 'listaDonantes.jsp',
+			url : 'listaDonantes',
 			success : function(data) {
 				$('#seccionBase').html(data);
 				$('#seccionBase div').slideDown(1000);
@@ -58,7 +58,7 @@ $(document).ready(function() {
 	});
 	$('.listaPrueba').off('click').on('click', function() {		
 		$.ajax({
-			url : 'listaPruebas.jsp',
+			url : 'listaPruebas',
 			success : function(data) {
 				$('#seccionBase').html(data);
 				$('#seccionBase div').slideDown(1000);

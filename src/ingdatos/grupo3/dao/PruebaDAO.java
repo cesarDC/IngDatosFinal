@@ -28,7 +28,7 @@ String message;
 			
 			cs.setInt(1,prueba.getIdPrueba());
 			cs.setString(2, prueba.getNombre());
-			cs.setInt(3, prueba.getEstado());
+			cs.setString(3, prueba.getEstado());
 		
 			cs.executeUpdate();
 			msg="Donante registrado";
@@ -64,7 +64,7 @@ String message;
 			
 			cs.setInt(1,prueba.getIdPrueba());
 			cs.setString(2, prueba.getNombre());
-			cs.setInt(3, prueba.getEstado());
+			cs.setString(3, prueba.getEstado());
 			
 			cs.executeUpdate();
 			msg="Prueba actualizada";
@@ -137,7 +137,7 @@ String message;
 				Prueba prueba= new Prueba();
 				prueba.setIdPrueba(rs.getInt("idPrueba"));
 				prueba.setNombre(rs.getString("NombrePrueba"));
-				prueba.setEstado(rs.getInt("Estado"));
+				prueba.setEstado(rs.getString("Estado"));
 				
 				listPruebas.add(prueba);
 			}
@@ -180,7 +180,7 @@ String message;
 			if(rs.next()){
 				prueba.setIdPrueba(rs.getInt("idPrueba"));
 				prueba.setNombre(rs.getString("NombrePrueba"));
-				prueba.setEstado(rs.getInt("Estado"));
+				prueba.setEstado(rs.getString("Estado"));
 			}else{
 				message="Prueba no encontrada";
 			}

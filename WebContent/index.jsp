@@ -11,27 +11,7 @@
 <link rel="stylesheet" href="css/custom2.css" />
 <script src="js/custom.js"></script>
 <title>Panel de control</title>
-<script type="text/javascript">
-	function logout() {
-		var usuario = $("#usuario").val();
-		var password = $("#password").val();
-		$.ajax({
-			type : "POST",
-			url : "sesion",
-			data : {
-				accion : "LOGOUT"
-			},
-			success : function(data) {
-				var result = data.substr(0, 9);
-				if (result == "login.jsp") {
-					window.location = data;
-				} else {
-					alert(data);
-				}
-			}
-		});
-	}
-</script>
+
 </head>
 <body id="inicio">
 	<div id="wrap">

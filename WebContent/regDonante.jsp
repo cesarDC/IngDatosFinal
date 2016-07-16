@@ -15,7 +15,7 @@
 <body>
 
 	<h4 class="section-titulo">Formulario para ingresar donante</h4>
-	<form id="postDonante" action="donante" method="post">	
+	<form id="" action="listaDonantes" method="post">	
 		
 		<div class="row">
 			<div class="form-group col-md-2" style="">
@@ -51,7 +51,7 @@
 			<div class="form-group col-md-2" style="">
 				<label for="tipoSangre">Tipo de sangre</label> <select
 					id="tipoSangre" class="form-control" name="tipoSangre">
-					<option value="1">O+</option>
+					<option value="O+">O+</option>
 				</select>
 			</div>
 			<div class="form-group col-md-2" style="">

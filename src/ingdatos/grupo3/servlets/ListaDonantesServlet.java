@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import ingdatos.grupo3.beans.Donante;
 import ingdatos.grupo3.dao.DonanteDAO;
@@ -32,17 +33,17 @@ public class ListaDonantesServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		DonanteDAO donanteDAOImpl=new DonanteDAO();
-		List<Donante> lista=donanteDAOImpl.listarDonantes();
-		String msg=donanteDAOImpl.getMessage();
-		RequestDispatcher rd;
-		if(lista.isEmpty()){
-			rd=request.getRequestDispatcher("confirmar.jsp");			
-			request.setAttribute("msg", msg);			
-		}else{
-			rd=request.getRequestDispatcher("listaDonantes.jsp");
-			request.setAttribute("listaDonantes", lista);
-		}
+		
+		HttpSession ses = request.getSession(true);
+		
+		DonanteDAO donanteD=new DonanteDAO();
+		List<Donante> lista=donanteD.listarDonantes();
+				
+		ses.setAttribute("listaDonantes", lista);
+		System.out.println("lista Set");
+		String rpta = "listaDonantes.jsp";
+	
+		RequestDispatcher rd=request.getRequestDispatcher(rpta);		
 		rd.forward(request, response);
 		
 	}
@@ -51,8 +52,31 @@ public class ListaDonantesServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		HttpSession ses = request.getSession(true);
+		DonanteDAO donanteD=new DonanteDAO();
+		
+		
+		int dni = Integer.parseInt(request.getParameter("dni"));
+		String nombres = request.getParameter("nombre");		
+		String apellido_parterno = request.getParameter("aPaterno");
+		String apellido_materno = request.getParameter("aMaterno");
+		String sexo = request.getParameter("Sexo");
+		String tipoSangre = request.getParameter("tipoSangre");
+		int telf = Integer.parseInt(request.getParameter("telefono"));
+		String fechaNac = request.getParameter("fechaNac");
+		int peso= Integer.parseInt(request.getParameter("peso"));
+		
+		Donante don = new Donante(dni, nombres, apellido_parterno, apellido_materno, sexo,telf , peso, fechaNac, "Apto", tipoSangre);
+		
+		donanteD.ingresarDonante(don);
+		System.out.println("Ingreso");
+		String rpta = "listaDonantes.jsp";
+		RequestDispatcher rd=request.getRequestDispatcher(rpta);		
+		rd.forward(request, response);
+		
+	}
+	
 	}
 
-}
+

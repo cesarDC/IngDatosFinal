@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -14,7 +15,7 @@
 </head>
 <body>
 
-	<h4 class="section-titulo">Reporte / Lista de donantes</h4>
+	<h4 class="section-titulo">Reporte / Lista de Pruebas</h4>
 	<div class="table-responsive">
 		<table class="table table-striped ">
 			<thead>
@@ -26,70 +27,19 @@
 				</tr>
 			</thead>
 			<tbody>
+				<c:forEach var="x"  items="${sessionScope.listaPruebas}">
+				<% System.out.print("fila"); %>	
 				<tr>
-					<td><center>1</center></td>
-					<td><center>VIH</center></td>
-					<td><center>Positivo</center></td>
-					<td><center><a class="editarPrueba" href="#" data-index-number=""
+				<td><c:out value="${x.idPrueba}" /></td>
+				<td><c:out value="${x.nombre}" /></td>
+				<td><c:out value="${x.estado}"/></td>
+				<td><a class="editarPrueba" href="#" data-index-number=""
 						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
 						<a class="verPrueba" href="#" data-index-number=""
-						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
-				</tr>
-				<tr>
-					<td><center>2</center></td>
-					<td><center>VIH</center></td>
-					<td><center>Negativo</center></td>
-					<td><center><a class="editarPrueba" href="#" data-index-number=""
-						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
-						<a class="verPrueba" href="#" data-index-number=""
-						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
-				</tr>
-				<tr>
-					<td><center>3</center></td>
-					<td><center>VIH</center></td>
-					<td><center>Negativo</center></td>
-					<td><center><a class="editarPrueba" href="#" data-index-number=""
-						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
-						<a class="verPrueba" href="#" data-index-number=""
-						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
-				</tr>
-				<tr>
-					<td><center>4</center></td>
-					<td><center>Hepatitis</center></td>
-					<td><center>Negativo</center></td>
-					<td><center><a class="editarPrueba" href="#" data-index-number=""
-						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
-						<a class="verPrueba" href="#" data-index-number=""
-						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
-				</tr>
-				<tr>
-					<td><center>5</center></td>
-					<td><center>Hepatitis</center></td>
-					<td><center>Positivo</center></td>
-					<td><center><a class="editarPrueba" href="#" data-index-number=""
-						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
-						<a class="verPrueba" href="#" data-index-number=""
-						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
-				</tr>
-				<tr>
-					<td><center>6</center></td>
-					<td><center>Sirrosis</center></td>
-					<td><center>Positivo</center></td>
-					<td><center><a class="editarPrueba" href="#" data-index-number=""
-						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
-						<a class="verPrueba" href="#" data-index-number=""
-						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
-				</tr>
-				<tr>
-					<td><center>7</center></td>
-					<td><center>Sirrosis</center></td>
-					<td><center>Negativo</center></td>
-					<td><center><a class="editarPrueba" href="#" data-index-number=""
-						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
-						<a class="verPrueba" href="#" data-index-number=""
-						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
-				</tr>
-				
+						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a>
+             </td>
+             </tr>
+             </c:forEach>              
 			</tbody>
 		</table>
 	</div>

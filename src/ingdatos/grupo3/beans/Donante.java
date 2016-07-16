@@ -10,14 +10,14 @@ public class Donante {
 	private int peso;
 	private String fechaNacimiento;
 	private String estado;
-	private int idtipoSangre;
+	private String idtipoSangre;
 	
 	public Donante() {
 		super();
 	}
 
 	public Donante(int dNI, String nombre, String apellidoP, String apellidoM, String sexo, int numTelf, int peso,
-			String fechaNacimiento, String estado, int idtipoSangre) {
+			String fechaNacimiento, String estado, String idtipoSangre) {
 		super();
 		DNI = dNI;
 		this.nombre = nombre;
@@ -103,11 +103,11 @@ public class Donante {
 		this.estado = estado;
 	}
 
-	public int getIdtipoSangre() {
+	public String getIdtipoSangre() {
 		return idtipoSangre;
 	}
 
-	public void setIdtipoSangre(int idtipoSangre) {
+	public void setIdtipoSangre(String idtipoSangre) {
 		this.idtipoSangre = idtipoSangre;
 	}
 
