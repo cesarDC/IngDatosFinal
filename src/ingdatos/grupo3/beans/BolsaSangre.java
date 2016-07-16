@@ -6,7 +6,9 @@ private int idLocal;
 private String TipoSangre;
 private int DNI;
 private int estado;
-private int idPrueba;
+private int idPruebaA;
+private int idPruebaB;
+private int idPruebaC;
 private String FechaDonacion;
 
 
@@ -16,7 +18,7 @@ public BolsaSangre() {
 
 
 
-public BolsaSangre(int idBolsaSangre, int idLocal, String tipoSangre, int dNI, int estado, int idPrueba,
+public BolsaSangre(int idBolsaSangre, int idLocal, String tipoSangre, int dNI, int estado, int idPruebaA, int idPruebaB, int idPruebaC,
 		String fechaDonacion) {
 	super();
 	this.idBolsaSangre = idBolsaSangre;
@@ -24,20 +26,48 @@ public BolsaSangre(int idBolsaSangre, int idLocal, String tipoSangre, int dNI, i
 	TipoSangre = tipoSangre;
 	DNI = dNI;
 	this.estado = estado;
-	this.idPrueba = idPrueba;
+	this.idPruebaA = idPruebaA;
+	this.idPruebaB = idPruebaB;
+	this.idPruebaC = idPruebaC;
 	FechaDonacion = fechaDonacion;
 }
 
 
 
-public int getIdPrueba() {
-	return idPrueba;
+
+
+public int getIdPruebaA() {
+	return idPruebaA;
 }
 
 
 
-public void setIdPrueba(int idPrueba) {
-	this.idPrueba = idPrueba;
+public void setIdPruebaA(int idPruebaA) {
+	this.idPruebaA = idPruebaA;
+}
+
+
+
+public int getIdPruebaB() {
+	return idPruebaB;
+}
+
+
+
+public void setIdPruebaB(int idPruebaB) {
+	this.idPruebaB = idPruebaB;
+}
+
+
+
+public int getIdPruebaC() {
+	return idPruebaC;
+}
+
+
+
+public void setIdPruebaC(int idPruebaC) {
+	this.idPruebaC = idPruebaC;
 }
 
 
