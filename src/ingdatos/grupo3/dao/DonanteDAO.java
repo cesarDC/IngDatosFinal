@@ -18,70 +18,18 @@ import oracle.jdbc.internal.OracleTypes;
 
 public class DonanteDAO {
 	String message;
-	
-	
-	
+			
 	public String getMessage() {
 		return message;
 	}
-	/*
-	public void prueba(){
-	
-	System.out.println("-------- Oracle JDBC Connection Testing ------");
 
-	try {
-
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-
-	} catch (ClassNotFoundException e) {
-
-		System.out.println("Where is your Oracle JDBC Driver?");
-		e.printStackTrace();
-		return;
-
-	}
-
-	System.out.println("Oracle JDBC Driver Registered!");
-
-	Connection connection = null;
-
-	try {
-
-		connection = DriverManager.getConnection(
-				"jdbc:oracle:thin:@friccio.com:1521:XE", "usuario4",
-				"oracle");
-
-	} catch (SQLException e) {
-
-		System.out.println("Connection Failed! Check output console");
-		e.printStackTrace();
-		return;
-
-	}
-
-	if (connection != null) {
-		System.out.println("You made it, take control your database now!");
-	} else {
-		System.out.println("Failed to make connection!");
-	}
-	}
-
-*/
-
-
-	
 	public String ingresarDonante(Donante donante) {
 		String msg;
-		
-		Connection conn=null;
+		Connection conn = ConexionDAO.conectarse();
 		CallableStatement cs=null;
 		String sql="{call PR_insertarDonante(?,?,?,?,?,?,?)}";
 		try {
-			//initContext=new InitialContext();
-			//DataSource ds = (DataSource) initContext.lookup("java:/comp/env/jdbc/ConexionOracle");
-			conn = DriverManager.getConnection(
-				"jdbc:oracle:thin:@friccio.com:1521:XE", "usuario4",
-				"oracle");
+						
 			cs=conn.prepareCall(sql);
 			
 			cs.setInt(1,donante.getDNI());
@@ -112,7 +60,7 @@ public class DonanteDAO {
 		}
 		return msg;
 	}
-/*
+
 
 	public String modificarDonante(Donante donante) {
 		Context initContext;
@@ -162,7 +110,7 @@ public class DonanteDAO {
 		return message;
 	}
 	
-	/*
+	
 
 	
 	public String eliminarDonante(Donante donante) {
@@ -258,7 +206,7 @@ public class DonanteDAO {
 		}
 		return listDonantes;
 	}
-
+	/*
 	
 	public Donante getDonante(String dnidon) {
 		Context initContext;
