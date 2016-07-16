@@ -39,6 +39,13 @@
 		
 		
 		<div class="row">
+			<div class="form-group col-md-3" style="">
+				<label for="Sexo">Sexo</label> <select
+					id="Sexo" class="form-control" name="Sexo">
+					<option value="M">Masculino</option>
+					<option value="F">Femenino</option>
+				</select>
+			</div>
 			<div class="form-group col-md-2" style="">
 				<label for="tipoSangre">Tipo de sangre</label> <select
 					id="tipoSangre" class="form-control" name="tipoSangre">

@@ -29,7 +29,7 @@
 					<option value="O-">O-</option>
 				</select>
 			</div>
-			<button type="submit" class="btn btn-danger" style="margin-top:1.6%">
+			<button type="submit" class="btn btn-danger" style="margin-top:2.1%">
 				<span class="glyphicon glyphicon-plus"></span> 
 				<span>Buscar</span>
 			</button>
@@ -61,10 +61,6 @@
 			</tbody>
 		</table>
 	</div>
-		<button type="submit" class="btn btn-danger">
-			<span class="glyphicon glyphicon-plus"></span> 
-			<span>Editar Bolsa de Sangre</span>
-		</button>
 	</form>
 </body>
 </html>

@@ -65,6 +65,26 @@ $(document).ready(function() {
 			}
 		});		
 	});
+
+	$('.editarPrueba').off('click').on('click', function() {		
+		$.ajax({
+			url : 'editarPrueba.jsp',
+			success : function(data) {
+				$('#seccionBase').html(data);
+				$('#seccionBase div').slideDown(1000);
+			}
+		});		
+	});
+
+	$('.verPrueba').off('click').on('click', function() {		
+		$.ajax({
+			url : 'verPrueba.jsp',
+			success : function(data) {
+				$('#seccionBase').html(data);
+				$('#seccionBase div').slideDown(1000);
+			}
+		});		
+	});
 	$('.EditarBolsaSangre').off('click').on('click', function() {		
 		$.ajax({
 			url : 'editarBolsaSangre.jsp',

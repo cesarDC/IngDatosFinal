@@ -19,28 +19,28 @@
 		<table class="table table-striped ">
 			<thead>
 				<tr>
-					<th>Nombre Prueba</th>
-					<th>Estado</th>
-					<th>Acciones</th>
+					<th><center>Codigo</center></th>
+					<th><center>Nombre Prueba</center></th>
+					<th><center>Estado</center></th>
+					<th><center>Acciones</center></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>VIH</td>
-					<td>Positivo</td>
-					<td><a class="editarDonante" href="#" data-index-number=""
+					<td><center>1</center></td>
+					<td><center>VIH</center></td>
+					<td><center>Positivo</center></td>
+					<td><center><a class="editarPrueba" href="#" data-index-number=""
 						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
-						<a class="verDonante" href="#" data-index-number=""
-						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a>
-						<a class="eliminarDonante" href="#" data-index-number=""><span
-							class="glyphicon glyphicon-remove"></span></a></td>
+						<a class="verPrueba" href="#" data-index-number=""
+						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 	<div style="margin-bottom: 3%">
 		<a href="#" role="button"
-			class="btn btn-danger btn-agregar registrarDonante"><span
+			class="btn btn-danger btn-agregar registrarPrueba"><span
 			class="glyphicon glyphicon-plus"></span>Agregar Registro</a>
 	</div>
 

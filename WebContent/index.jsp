@@ -89,7 +89,7 @@
 							</li>
 						</ul>
 					</li>
-					<li><span class="fa fa-users" aria-hidden="true"></span>
+					<li><span class="fa fa-users " style="color:#d9534f" aria-hidden="true"></span>
 						<label class="leftheading">Gestión de Donantes</label>
 						<ul class="leftbar subheading ">
 							<li>
@@ -104,7 +104,7 @@
 							</li>
 						</ul>
 					</li>
-					<li><span class="fa fa-file-text" aria-hidden="true"></span>
+					<li><span class="fa fa-file-text" style="color:#d9534f"  aria-hidden="true"></span>
 						<label class="leftheading">Gestión de Pruebas</label>
 						<ul class="leftbar subheading ">
 							<li>

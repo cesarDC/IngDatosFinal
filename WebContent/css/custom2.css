@@ -9,7 +9,9 @@ a {
 a:focus, a:hover, a:active {
 	color: #d9534f;
 }
-
+.iconos{
+	color:#d9534f;
+}
 .navbar {
 	padding-top: 1%;
 	padding-left: 1%;
