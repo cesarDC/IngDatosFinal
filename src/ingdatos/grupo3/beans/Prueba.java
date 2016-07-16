@@ -2,17 +2,17 @@ package ingdatos.grupo3.beans;
 
 public class Prueba {
 	private int idPrueba;
-	private String nombres;
+	private String nombre;
 	private int estado;
 
 	public Prueba() {
 		super();
 	}
 
-	public Prueba(int idPrueba, String nombres, int estado) {
+	public Prueba(int idPrueba, String nombre, int estado) {
 		super();
 		this.idPrueba = idPrueba;
-		this.nombres = nombres;
+		this.nombre = nombre;
 		this.estado = estado;
 	}
 
@@ -24,12 +24,12 @@ public class Prueba {
 		this.idPrueba = idPrueba;
 	}
 
-	public String getNombres() {
-		return nombres;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public int getEstado() {
@@ -40,6 +40,13 @@ public class Prueba {
 		this.estado = estado;
 	}
 
+	@Override
+	public String toString() {
+		return "Prueba [idPrueba=" + idPrueba + ", nombre=" + nombre + ", estado=" + estado + "]";
+	}
+
+	
+	
 	
 	
 }
