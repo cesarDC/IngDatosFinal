@@ -3,25 +3,32 @@ package ingdatos.grupo3.beans;
 public class Donante {
 	private int DNI;
 	private String nombre;
-	private String apellido;
+	private String apellidoP;
+	private String apellidoM;
 	private String sexo;
 	private int numTelf;
 	private int peso;
 	private String fechaNacimiento;
+	private String estado;
+	private int idtipoSangre;
 	
 	public Donante() {
 		super();
 	}
 
-	public Donante(int dNI, String nombre, String apellido, String sexo, int numTelf, int peso, String fechaNacimiento) {
+	public Donante(int dNI, String nombre, String apellidoP, String apellidoM, String sexo, int numTelf, int peso,
+			String fechaNacimiento, String estado, int idtipoSangre) {
 		super();
 		DNI = dNI;
 		this.nombre = nombre;
-		this.apellido = apellido;
+		this.apellidoP = apellidoP;
+		this.apellidoM = apellidoM;
 		this.sexo = sexo;
 		this.numTelf = numTelf;
 		this.peso = peso;
 		this.fechaNacimiento = fechaNacimiento;
+		this.estado = estado;
+		this.idtipoSangre = idtipoSangre;
 	}
 
 	public int getDNI() {
@@ -40,12 +47,20 @@ public class Donante {
 		this.nombre = nombre;
 	}
 
-	public String getApellido() {
-		return apellido;
+	public String getApellidoP() {
+		return apellidoP;
 	}
 
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+	public void setApellidoP(String apellidoP) {
+		this.apellidoP = apellidoP;
+	}
+
+	public String getApellidoM() {
+		return apellidoM;
+	}
+
+	public void setApellidoM(String apellidoM) {
+		this.apellidoM = apellidoM;
 	}
 
 	public String getSexo() {
@@ -72,13 +87,29 @@ public class Donante {
 		this.peso = peso;
 	}
 
-	public String getfechaNacimiento() {
+	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setfechaNacimiento(String fechaNacimiento) {
+	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public int getIdtipoSangre() {
+		return idtipoSangre;
+	}
+
+	public void setIdtipoSangre(int idtipoSangre) {
+		this.idtipoSangre = idtipoSangre;
+	}
+	
 	
 }

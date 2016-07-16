@@ -1,7 +1,7 @@
 package ingdatos.grupo3.beans;
 
 public class Local {
-	private String idLocal;
+	private String idLocal;	
 	private String direccion;
 	private boolean bancoSangre;
 	private int idCentroHosp;
