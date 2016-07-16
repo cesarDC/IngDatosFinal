@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import ingdatos.grupo3.beans.Donante;
 import ingdatos.grupo3.beans.Prueba;
 import oracle.jdbc.internal.OracleTypes;
 
@@ -57,7 +56,7 @@ String message;
 		Connection conn = ConexionDAO.conectarse();
 		CallableStatement cs=null;
 					
-		String sql="{call package pkg_pruebax.upd_prueba (?,?,?)}";
+		String sql="{call PR_modificarPrueba (?,?,?)}";
 		try {
 			
 				
@@ -91,7 +90,7 @@ String message;
 		String msg;
 		Connection conn = ConexionDAO.conectarse();
 		CallableStatement cs=null;
-		String sql="{call package pkg_pruebax.del_prueba (?)}";
+		String sql="{call PR_eliminarPrueba(?)}";
 		try {
 			cs=conn.prepareCall(sql);
 			
@@ -124,7 +123,7 @@ String message;
 		CallableStatement cs=null;
 		ResultSet rs=null;
 		
-		String sql="{call package pkg_pruebax.lista_pruebas (?)}";
+		String sql="{call PR_listarPruebas (?)}";
 		
 		List<Prueba> listPruebas = new ArrayList<>();;
 		try {
@@ -170,7 +169,7 @@ String message;
 		CallableStatement cs=null;
 		
 		ResultSet rs=null;
-		String sql="{call package pkg_pruebax.obtener_prueba (?,?)}";
+		String sql="{call PR_obtenerPrueba (?,?)}";
 		Prueba prueba=new Prueba();
 		try {
 			cs=conn.prepareCall(sql);			
