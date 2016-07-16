@@ -35,6 +35,61 @@
 						<a class="verPrueba" href="#" data-index-number=""
 						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
 				</tr>
+				<tr>
+					<td><center>2</center></td>
+					<td><center>VIH</center></td>
+					<td><center>Negativo</center></td>
+					<td><center><a class="editarPrueba" href="#" data-index-number=""
+						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
+						<a class="verPrueba" href="#" data-index-number=""
+						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
+				</tr>
+				<tr>
+					<td><center>3</center></td>
+					<td><center>VIH</center></td>
+					<td><center>Negativo</center></td>
+					<td><center><a class="editarPrueba" href="#" data-index-number=""
+						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
+						<a class="verPrueba" href="#" data-index-number=""
+						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
+				</tr>
+				<tr>
+					<td><center>4</center></td>
+					<td><center>Hepatitis</center></td>
+					<td><center>Negativo</center></td>
+					<td><center><a class="editarPrueba" href="#" data-index-number=""
+						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
+						<a class="verPrueba" href="#" data-index-number=""
+						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
+				</tr>
+				<tr>
+					<td><center>5</center></td>
+					<td><center>Hepatitis</center></td>
+					<td><center>Positivo</center></td>
+					<td><center><a class="editarPrueba" href="#" data-index-number=""
+						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
+						<a class="verPrueba" href="#" data-index-number=""
+						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
+				</tr>
+				<tr>
+					<td><center>6</center></td>
+					<td><center>Sirrosis</center></td>
+					<td><center>Positivo</center></td>
+					<td><center><a class="editarPrueba" href="#" data-index-number=""
+						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
+						<a class="verPrueba" href="#" data-index-number=""
+						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
+				</tr>
+				<tr>
+					<td><center>7</center></td>
+					<td><center>Sirrosis</center></td>
+					<td><center>Negativo</center></td>
+					<td><center><a class="editarPrueba" href="#" data-index-number=""
+						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
+						<a class="verPrueba" href="#" data-index-number=""
+						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
+				</tr>
+				
 			</tbody>
 		</table>
 	</div>
