@@ -46,6 +46,11 @@
 					type="number" class="form-control" id="DNIDonante"
 					placeholder="Escribir el Dni del Donante" name="DNIDonante" disabled>
 			</div>
+			
+			<div class="form-group col-md-4" style="">
+				<label for="fechaDonacion">Fecha de donacion</label> <input
+					type="date" class="form-control" id="fechaDonacion" name="fechaDonacion" disabled>
+			</div>
 		</div>
 		<div class="row">
 			<div class="form-group col-md-4" style="">
