@@ -42,6 +42,7 @@ public class LoginDAO {
 				usuario.setPassword(rs.getString("password"));
 				usuario.setTipoEmpleado(rs.getString("tipoEmpleado"));
 				usuario.setIdLocal(rs.getInt("idLocal")); 
+				System.out.println(rs.getString("nombreUsuario"));
 			}else{
 				msg="Usuario no encontrado";
 			}

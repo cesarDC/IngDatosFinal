@@ -3,20 +3,16 @@ package test;
 import java.util.List;
 
 import ingdatos.grupo3.beans.Donante;
+import ingdatos.grupo3.beans.Usuario;
 import ingdatos.grupo3.dao.DonanteDAO;
+import ingdatos.grupo3.dao.LoginDAO;
 
 public class Prueba {
 
 	public static void main(String[] args) {
 		
-		Donante don = new Donante(123456, "prueba", "apellido1", "apellido2", "F", 789456, 80,
-				"05/05/1980", "A", 1);
+		LoginDAO ldao=new LoginDAO();
 		
-		Donante don1 = new Donante(123456, "prueba2", "apellido1", "apellido2", "F", 789456, 80,
-				"05/05/1980", "A", 1);
-		
-		
-		DonanteDAO d = new DonanteDAO();
 		
 		
 		//System.out.println(d.ingresarDonante(don));
@@ -30,7 +26,7 @@ public class Prueba {
 		}
 		*/
 		
-		System.out.println(d.getDonante(456789));
+		System.out.println(ldao.getDonante("carlos", "123456"));
 		
 		
 		
