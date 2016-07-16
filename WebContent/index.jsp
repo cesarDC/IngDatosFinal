@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script src="js/jquery-2.2.3.js"></script>
 <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/font-awesome.min.css">
 <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/custom2.css" />
 <script src="js/custom.js"></script>
@@ -67,53 +68,53 @@
 		<div class="col-md-3">
 			<div id="asideBase">
 				<ul class="leftbar">
-					<li><span class="glyphicon glyphicon-briefcase leftheading"></span>
-						<h4 class="leftheading">Gestión de Bolsa de Sangre</h4>
+					<li><span class="glyphicon glyphicon-tint leftheading"></span>
+						<label class="leftheading">Gestión de Bolsa de Sangre</label>
 						<ul class="leftbar subheading">
 							<li><a class="PedidoBolsa" href="#">
-								<h5>>> Pedir bolsa de Sangre</h5>
+								<h5>Pedir bolsa de Sangre</h5>
 								</a>
 							</li>
 							<li><a class="ListaPedidos" href="#">
-								<h5>>> Ver lista de pedidos</h5>
+								<h5>Ver lista de pedidos</h5>
 								</a>
 							</li>
 							<li><a class="AgregarBolsa" href="#">
-								<h5>>> Agregar bolsa de Sangre</h5>
+								<h5>Agregar bolsa de Sangre</h5>
 								</a>
 							</li>
 							<li><a class="EditarBolsaSangre" href="#">
-								<h5>>> Editar Bolsa de Sangre</h5>
+								<h5>Editar Bolsa de Sangre</h5>
 								</a>
 							</li>
 						</ul>
 					</li>
-					<li><span class="glyphicon glyphicon-education leftheading"></span>
-						<h4 class="leftheading">Gestión de Donantes</h4>
+					<li><span class="fa fa-users" aria-hidden="true"></span>
+						<label class="leftheading">Gestión de Donantes</label>
 						<ul class="leftbar subheading ">
 							<li>
 								<a class="registrarDonante" href="#">
-								<h5>>> Añadir Donante</h5>
+								<h5>Añadir Donante</h5>
 								</a>
 							</li>
 							<li>
 								<a class="listaDonante" href="#">
-								<h5>>> Ver lista de Donantes</h5>
+								<h5>Ver lista de Donantes</h5>
 								</a>
 							</li>
 						</ul>
 					</li>
-					<li><span class="glyphicon glyphicon-education leftheading"></span>
-						<h4 class="leftheading">Gestión de Pruebas</h4>
+					<li><span class="fa fa-file-text" aria-hidden="true"></span>
+						<label class="leftheading">Gestión de Pruebas</label>
 						<ul class="leftbar subheading ">
 							<li>
 								<a class="registrarPrueba" href="#">
-								<h5>>> Añadir Puebas</h5>
+								<h5>Añadir Puebas</h5>
 								</a>
 							</li>
 							<li>
 								<a class="listaPrueba" href="#">
-								<h5>>> Ver lista de Pruebas</h5>
+								<h5>	Ver lista de Pruebas</h5>
 								</a>
 							</li>
 						</ul>

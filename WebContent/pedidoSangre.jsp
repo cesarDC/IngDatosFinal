@@ -54,12 +54,9 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td><a class="editarDonante" href="#" data-index=""
-						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
-						<a class="verDonante" href="#" data-index=""
-						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a>
-						<a class="eliminarDonante" href="#" data-index=""><span
-							class="glyphicon glyphicon-remove"></span></a></td>
+					<td ><center><a class="editarDonante" href="#" data-index="" 
+						data-action="editar"><span class="glyphicon glyphicon-ok-circle"></span></a></center></td>
+						
 				</tr>
 			</tbody>
 		</table>

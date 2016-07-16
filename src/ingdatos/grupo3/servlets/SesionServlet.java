@@ -24,6 +24,9 @@ public class SesionServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+	RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+	rd.forward(request, response);
 		// TODO Auto-generated method stub
 	}
 
