@@ -2,16 +2,10 @@ package ingdatos.grupo3.dao;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.DataSource;
 
 import ingdatos.grupo3.beans.Donante;
 import oracle.jdbc.internal.OracleTypes;
@@ -27,20 +21,20 @@ public class DonanteDAO {
 		String msg;
 		Connection conn = ConexionDAO.conectarse();
 		CallableStatement cs=null;
-		String sql="{call PR_insertarDonante(?,?,?,?,?,?,?)}";
+		String sql="{call PR_insertarDonante(?,?,?,?,?,?,?,?,?,?)}";
 		try {						
 			cs=conn.prepareCall(sql);	
 			
 			cs.setInt(1,donante.getDNI());
 			cs.setString(2, donante.getNombre());
 			cs.setString(3, donante.getApellidoP());
-			cs.setString(3, donante.getApellidoM());
-			cs.setString(4, donante.getSexo()); 
-			cs.setInt(5, donante.getNumTelf());
-			cs.setInt(6, donante.getPeso());
-			cs.setString(7, donante.getFechaNacimiento());
-			cs.setString(8, donante.getEstado());
-			cs.setInt(9, donante.getIdtipoSangre());
+			cs.setString(4, donante.getApellidoM());
+			cs.setString(5, donante.getSexo()); 
+			cs.setInt(6, donante.getNumTelf());
+			cs.setInt(7, donante.getPeso());
+			cs.setString(8, donante.getFechaNacimiento());
+			cs.setString(9, donante.getEstado());
+			cs.setInt(10, donante.getIdtipoSangre());
 			cs.executeUpdate();
 			msg="Donante registrado";
 		}catch (SQLException ex){
@@ -67,7 +61,7 @@ public class DonanteDAO {
 		Connection conn = ConexionDAO.conectarse();
 		CallableStatement cs=null;
 					
-		String sql="{call package pkg_donantex.upd_donante (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+		String sql="{call PR_modificarDonante(?,?,?,?,?,?,?,?,?,?)}";
 		try {
 			
 				
@@ -76,13 +70,13 @@ public class DonanteDAO {
 			cs.setInt(1,donante.getDNI());
 			cs.setString(2, donante.getNombre());
 			cs.setString(3, donante.getApellidoP());
-			cs.setString(3, donante.getApellidoM());
-			cs.setString(4, donante.getSexo()); 
-			cs.setInt(5, donante.getNumTelf());
-			cs.setInt(6, donante.getPeso());
-			cs.setString(7, donante.getFechaNacimiento());
-			cs.setString(8, donante.getEstado());
-			cs.setInt(9, donante.getIdtipoSangre());
+			cs.setString(4, donante.getApellidoM());
+			cs.setString(5, donante.getSexo()); 
+			cs.setInt(6, donante.getNumTelf());
+			cs.setInt(7, donante.getPeso());
+			cs.setString(8, donante.getFechaNacimiento());
+			cs.setString(9, donante.getEstado());
+			cs.setInt(10, donante.getIdtipoSangre());
 			
 			cs.executeUpdate();
 			msg="Donante actualizado";
@@ -108,7 +102,7 @@ public class DonanteDAO {
 		String msg;
 		Connection conn = ConexionDAO.conectarse();
 		CallableStatement cs=null;
-		String sql="{call package pkg_donantex.del_donante (?)}";
+		String sql="{call PR_eliminarDonante(?)}";
 		try {
 			cs=conn.prepareCall(sql);
 			
@@ -215,10 +209,10 @@ public class DonanteDAO {
 				donante.setEstado(rs.getString("estado"));
 				donante.setIdtipoSangre(rs.getInt("idtiposangre"));
 			}else{
-				message="Donante no encontrado";
+				msg="Donante no encontrado";
 			}
 		}catch (SQLException ex){
-			message=ex.getMessage();
+			msg=ex.getMessage();
 		} finally {
 			try {
 				if(rs!=null){
@@ -231,7 +225,7 @@ public class DonanteDAO {
 					conn.close();
 				}
 			} catch (SQLException ex){
-				message=ex.getMessage();
+				msg=ex.getMessage();
 			}
 			
 		}
