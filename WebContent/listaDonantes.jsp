@@ -39,6 +39,39 @@
 						<a class="verDonante" href="#" data-index=""
 						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
 				</tr>
+				<tr>
+					<td><center>20133333</center></td>
+					<td><center>Cesar Ugaz Burga</center></td>
+					<td><center>Masculino</center></td>
+					<td><center>A(+)</center></td>
+					<td><center>98901212130</center></td>
+					<td><center><a class="editarDonante" href="#" data-index=""
+						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
+						<a class="verDonante" href="#" data-index=""
+						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
+				</tr>
+				<tr>
+					<td><center>2013131149</center></td>
+					<td><center>Rossy Espinoza</center></td>
+					<td><center>Femenino</center></td>
+					<td><center>A(+)</center></td>
+					<td><center>994039231</center></td>
+					<td><center><a class="editarDonante" href="#" data-index=""
+						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
+						<a class="verDonante" href="#" data-index=""
+						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
+				</tr>
+				<tr>
+					<td><center>201123414</center></td>
+					<td><center>Mitchelli Trigueros</center></td>
+					<td><center>Masculino</center></td>
+					<td><center>AB(+)</center></td>
+					<td><center>98901122130</center></td>
+					<td><center><a class="editarDonante" href="#" data-index=""
+						data-action="editar"><span class="glyphicon glyphicon-pencil"></span></a>
+						<a class="verDonante" href="#" data-index=""
+						data-action="ver"><span class="glyphicon glyphicon-zoom-in"></span></a></center>
+				</tr>
 			</tbody>
 		</table>
 	</div>
