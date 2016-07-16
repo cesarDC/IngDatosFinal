@@ -110,6 +110,15 @@ public class Donante {
 	public void setIdtipoSangre(int idtipoSangre) {
 		this.idtipoSangre = idtipoSangre;
 	}
+
+	@Override
+	public String toString() {
+		return "Donante [DNI=" + DNI + ", nombre=" + nombre + ", apellidoP=" + apellidoP + ", apellidoM=" + apellidoM
+				+ ", sexo=" + sexo + ", numTelf=" + numTelf + ", peso=" + peso + ", fechaNacimiento=" + fechaNacimiento
+				+ ", estado=" + estado + ", idtipoSangre=" + idtipoSangre + "]";
+	}
+	
+	
 	
 	
 }
