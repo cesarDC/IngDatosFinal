@@ -15,24 +15,31 @@
 <body>
 
 	<h4 class="section-titulo">Formulario para ingresar donante</h4>
-	<form id="postDonante" action="donante" method="post">		
+	<form id="postDonante" action="donante" method="post">	
+		
 		<div class="row">
-			<div class="form-group col-md-4" style="">
-				<label for="nombre">Nombres</label> <input type="text"
-					class="form-control" id="nombre" placeholder="Escribir nombre"
-					name="nombre">
+			<div class="form-group col-md-2" style="">
+				<label for="dni">DNI</label> <input type="text" class="form-control"
+					id="dni" name="dni">
 			</div>
-			<div class="form-group col-md-4" style="">
+			<div class="form-group col-md-3" style="">
+				<label for="nombre">Nombres</label> <input type="text"
+					class="form-control" id="nombre" name="nombre">
+			</div>
+			<div class="form-group col-md-3" style="">
 				<label for="apellidopaterno">Apellido Paterno</label> <input
 					type="text" class="form-control" id="apellidopaterno"
-					placeholder="Escribir apellido paterno" name="apellidop">
+					name="apellidop">
 			</div>
-			<div class="form-group col-md-4" style="">
+			<div class="form-group col-md-3" style="">
 				<label for="apellidomaterno">Apellido Materno</label> <input
 					type="text" class="form-control" id="apellidomaterno"
-					placeholder="Escribir apellido materno" name="apellidom">
+					name="apellidom">
 			</div>
+
 		</div>
+		
+		
 		<div class="row">
 			<div class="form-group col-md-2" style="">
 				<label for="tipoSangre">Tipo de sangre</label> <select
@@ -40,61 +47,39 @@
 					<option value="1">O+</option>
 				</select>
 			</div>
-			<div class="form-group col-md-5" style="">
-				<label for="email">Correo electrónico</label> <input type="email"
-					class="form-control" id="email" placeholder="Escribir email"
-					name="email">
-			</div>
 			<div class="form-group col-md-2" style="">
-				<label for="tipoDonante">Tipo de donante</label> <select
-					id="tipoDonante" class="form-control" name="tipoDonante">
-					<option value="V">Voluntario</option>
-				</select>
-			</div>
-			<div class="form-group col-md-3" style="">
-				<label for="distrito">Distrito</label> <select id="distrito"
-					class="form-control" name="distrito">
-					<option value="1">Surco</option>
-				</select>
-			</div>
-		</div>
-		<div class="row">
-			<div class="form-group col-md-6" style="">
-				<label for="direccion">Dirección</label> <input type="text"
-					class="form-control" id="direccion"
-					placeholder="Escribir dirección" name="direccion">
-			</div>
-
-			<div class="form-group col-md-3" style="">
-				<label for="edad">Edad</label> <input type="number"
-					class="form-control" id="edad" placeholder="Escribir edad"
-					name="edad">
+				<label for="telefono">Número de teléfono</label> <input type="number"
+					class="form-control" id="telefono" name="telefono">
 			</div>
 			<div class="form-group col-md-3" style="">
 				<label for="fechaNac">Fecha de nacimiento</label> <input type="date"
 					class="form-control" id="fechaNac" name="fechaNac">
 			</div>
+			<div class="form-group col-md-1" style="">
+				<label for="peso">Peso</label> <input type="number"
+					class="form-control" id="peso" name="peso">
+			</div>
 		</div>
+		
+		
 		<div class="row">
-			<div class="form-group col-md-4" style="">
-				<label for="telefono">Teléfono fijo</label> <input type="number"
-					class="form-control" id="telefono" placeholder="Escribir telefono"
-					name="telefono">
+			<div class="form-group col-md-3" style="">
 			</div>
-			<div class="form-group col-md-4" style="">
-				<label for="celular">Celular</label> <input type="number"
-					class="form-control" id="celular" placeholder="Escribir celular"
-					name="celular">
+			<div class="form-group col-md-3" style="">
 			</div>
-			<div class="form-group col-md-4" style="">
-				<label for="dni">DNI</label> <input type="text" class="form-control"
-					id="dni" placeholder="Escribir dni" name="dni">
+			<div class="form-group col-md-3" style="">
 			</div>
+			<div class="form-group col-md-3" style="">
+				<button type="submit" class="btn btn-danger">
+					<span class="glyphicon glyphicon-plus"></span> <span>Ingresar
+						registro</span>
+				</button>	
+			</div>
+
+
 		</div>
-		<button type="submit" class="btn btn-danger">
-			<span class="glyphicon glyphicon-plus"></span> <span>Ingresar
-				registro</span>
-		</button>
+
+
 
 	</form>
 
