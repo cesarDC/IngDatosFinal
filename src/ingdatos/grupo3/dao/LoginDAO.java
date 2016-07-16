@@ -18,9 +18,6 @@ public class LoginDAO {
 		return message;
 	}
 
-	
-	
-	
 	public Usuario getDonante(String nickname,String password) {
 		String msg;
 		Connection conn = ConexionDAO.conectarse();
@@ -35,16 +32,16 @@ public class LoginDAO {
 			cs.setString(2,password);
 			cs.registerOutParameter(3, OracleTypes.CURSOR);
 			cs.executeQuery();
-			rs = (ResultSet)cs.getObject(2);
+			rs = (ResultSet)cs.getObject(3);
 			if(rs.next()){
 				usuario.setIdUsuario(rs.getInt("idUsuario"));
 				usuario.setNombreUsuario(rs.getString("nombreUsuario"));
 				usuario.setPassword(rs.getString("password"));
 				usuario.setTipoEmpleado(rs.getString("tipoEmpleado"));
 				usuario.setIdLocal(rs.getInt("idLocal")); 
-				System.out.println(rs.getString("nombreUsuario"));
+				System.out.println("Bienvenido " + usuario.getNombreUsuario());
 			}else{
-				msg="Usuario no encontrado";
+				System.out.println("Usuario no encontrado");
 			}
 		}catch (SQLException ex){
 			msg=ex.getMessage();

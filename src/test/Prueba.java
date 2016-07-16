@@ -26,9 +26,7 @@ public class Prueba {
 		}
 		*/
 		
-		System.out.println(ldao.getDonante("carlos", "123456"));
-		
-		
+		System.out.println(ldao.getDonante("cesar", "123456").getNombreUsuario());
 		
 		
 		//d.prueba();

@@ -48,6 +48,11 @@ public class Usuario {
 	public void setIdLocal(int idLocal) {
 		this.idLocal = idLocal;
 	}
+	@Override
+	public String toString() {
+		return "Usuario [idUsuario=" + idUsuario + ", nombreUsuario=" + nombreUsuario + ", password=" + password
+				+ ", tipoEmpleado=" + tipoEmpleado + ", idLocal=" + idLocal + "]";
+	}
 	
 	
 	
